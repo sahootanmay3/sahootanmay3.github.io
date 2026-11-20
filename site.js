@@ -23,8 +23,7 @@ if (header) {
     savedTheme = null;
   }
 
-  const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
-  const initialTheme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : preferredTheme;
+  const initialTheme = savedTheme === "dark" || savedTheme === "light" ? savedTheme : "light";
 
   function applyTheme(theme) {
     document.documentElement.dataset.theme = theme;
