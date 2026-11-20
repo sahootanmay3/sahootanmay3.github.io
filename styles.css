@@ -405,3 +405,236 @@ h1, h2, h3 {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
+/* =========================================================
+   Illustrated research themes
+   ========================================================= */
+
+.research-showcase {
+  background: var(--surface-alt);
+}
+
+.research-intro {
+  max-width: 920px;
+}
+
+.research-intro > p:last-child {
+  max-width: 850px;
+  color: var(--muted);
+}
+
+.research-theme-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.3rem;
+}
+
+.research-theme-card {
+  display: flex;
+  min-width: 0;
+  overflow: hidden;
+  flex-direction: column;
+  color: var(--ink);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 28px rgba(11, 31, 51, 0.06);
+  text-decoration: none;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.research-theme-card:hover {
+  color: var(--ink);
+  border-color: var(--gold-500);
+  box-shadow: 0 18px 42px rgba(11, 31, 51, 0.12);
+  transform: translateY(-4px);
+}
+
+.research-theme-visual {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 8.6;
+  color: #dbe7ef;
+  background:
+    radial-gradient(circle at 85% 15%, rgba(195, 148, 46, 0.22), transparent 30%),
+    linear-gradient(135deg, #0b1f33, #1b4668);
+  border-bottom: 3px solid var(--gold-500);
+}
+
+.research-theme-visual svg {
+  width: 100%;
+  height: 100%;
+}
+
+.research-theme-copy {
+  display: flex;
+  flex: 1;
+  padding: 1.45rem 1.55rem 1.55rem;
+  flex-direction: column;
+}
+
+.research-theme-number {
+  color: var(--gold-600);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.research-theme-copy h3 {
+  margin: 0.45rem 0 0.65rem;
+  font-size: clamp(1.28rem, 2vw, 1.55rem);
+}
+
+.research-theme-copy p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.92rem;
+}
+
+.research-theme-link {
+  margin-top: auto;
+  padding-top: 1.15rem;
+  color: var(--link);
+  font-size: 0.82rem;
+  font-weight: 800;
+}
+
+.research-theme-card:hover .research-theme-link {
+  color: var(--gold-600);
+}
+
+/* Shared SVG styling */
+
+.visual-grid {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.17);
+  stroke-width: 2;
+}
+
+.visual-line {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.visual-gold {
+  stroke: #dfbf72;
+}
+
+.visual-blue {
+  stroke: #87bbd6;
+}
+
+.visual-dashed {
+  stroke-width: 4;
+  stroke-dasharray: 14 12;
+  opacity: 0.7;
+}
+
+.censor-marks {
+  fill: none;
+  stroke: #f7edd3;
+  stroke-width: 5;
+  stroke-linecap: round;
+}
+
+.research-theme-visual text {
+  fill: rgba(255, 255, 255, 0.82);
+  font-family: Inter, ui-sans-serif, system-ui, sans-serif;
+  font-size: 20px;
+  font-weight: 650;
+  letter-spacing: 0.02em;
+}
+
+/* Reliability illustration */
+
+.system-paths {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.62);
+  stroke-width: 7;
+  stroke-linecap: round;
+}
+
+.system-components {
+  fill: #122d47;
+  stroke: #dfbf72;
+  stroke-width: 7;
+}
+
+.system-labels text {
+  fill: white;
+  font-size: 17px;
+  font-weight: 800;
+  text-anchor: middle;
+}
+
+/* Robust-inference illustration */
+
+.data-points {
+  fill: #87bbd6;
+  stroke: #e8f3f8;
+  stroke-width: 3;
+}
+
+.outlier-points {
+  fill: #c3942e;
+  stroke: #f7edd3;
+  stroke-width: 4;
+}
+
+/* Order-restricted illustration */
+
+.ordered-curve {
+  fill: none;
+  stroke-width: 8;
+  stroke-linecap: round;
+}
+
+.curve-one {
+  stroke: #87bbd6;
+}
+
+.curve-two {
+  stroke: #dfbf72;
+}
+
+.curve-three {
+  stroke: #f7edd3;
+}
+
+.order-arrows {
+  fill: none;
+  stroke: #c3942e;
+  stroke-width: 6;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+/* Responsive layout */
+
+@media (max-width: 850px) {
+  .research-theme-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 620px) {
+  .research-theme-grid {
+    gap: 1rem;
+  }
+
+  .research-theme-copy {
+    padding: 1.2rem;
+  }
+
+  .research-theme-visual {
+    aspect-ratio: 16 / 9.5;
+  }
+
+  .research-theme-visual text {
+    font-size: 17px;
+  }
+}
